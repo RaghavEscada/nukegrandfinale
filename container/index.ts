@@ -10,7 +10,7 @@ export { default as VideoHome } from './home-page/Video';
 export { default as Heroservices } from "./services-page/Hero";
 export { default as Process } from "./services-page/Process";
 export { default as Capibilyties } from "./services-page/Capibilyties";
-export { default as Clientsservices } from "./services-page/Clients";
+
 export { default as Expectations } from "./services-page/Expectations";
 export { default as Archive } from "./services-page/Archive";
 
