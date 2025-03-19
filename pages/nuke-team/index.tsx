@@ -1,6 +1,6 @@
 "use client";
 
-import { Curve, Ready } from "@/components";
+import { Curve} from "@/components";
 
 export default function ContactPage() {
   return (
