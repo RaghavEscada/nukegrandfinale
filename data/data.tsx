@@ -1,6 +1,7 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import { Timeline } from "@/components/ui/timeline";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
 import React from "react";
 import Image from "next/image";
@@ -228,6 +229,14 @@ export function TimelineDemo() {
   return (
     <div className="w-full">
       <Timeline data={data} />
+    </div>
+  );
+}
+
+export function TextHoverEffectDemo() {
+  return (
+    <div className="h-[40rem] flex items-center justify-center">
+      <TextHoverEffect text="NUKE." />
     </div>
   );
 }
