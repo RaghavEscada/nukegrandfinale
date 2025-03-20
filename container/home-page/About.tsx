@@ -72,10 +72,8 @@ export default function About() {
 					<Heading title="Nuke's Approach:" />
 
 					{/* Separate TimelineDemo div */}
-					<div className="w-full bg-slate-800 overflow-hidden">
-    <div className="max-w-full">
-        <TimelineDemo />
-    </div>
+					<div className="w-full bg-slate-800">
+    <TimelineDemo />
 </div>
 
 
