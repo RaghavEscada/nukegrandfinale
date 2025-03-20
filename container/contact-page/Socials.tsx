@@ -1,16 +1,14 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
-import { eyes } from "@/public";
+
 import { ArrowUpRight } from "lucide-react";
 import { LinkHover, TextMask } from "@/animation";
 import { useEffect, useState, useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { Eyes } from "@/components";
+
 
 export default function Socials() {
 	const [rotate, setRotate] = useState(0);
-	const phrase = ["INSTAGRAM", "behance", "facebook", "linkedin"];
+	const phrase = ["SMMA", "Web Development", "Brand Identity", "Content Strategy"];
 	useEffect(() => {
 		window.addEventListener("mousemove", (e) => {
 			let mouseX = e.clientX;
@@ -33,7 +31,7 @@ export default function Socials() {
 	const mq = useTransform(scrollYProgress, [0, 1], [0, -700]);
 	return (
 		<section
-			className="w-full min-h-screen sm:h-screen  bg-slate-300  xm:h-screen text-white padding-y relative"
+			className="w-full min-h-screen sm:h-screen  bg-black text-red-400  xm:h-screen text-white padding-y relative"
 			ref={container}>
 			<div className="w-full h-full flex justify-center gap-[50px] items-center flex-col">
 				<div className="flex  flex-col gap-[10px] pb-[50px]">
@@ -44,13 +42,13 @@ export default function Socials() {
 				<div className="w-full border-t border-[#21212155] pt-[20px]">
 					<div className="w-full flex sm:flex-col xm:flex-col justify-between gap-y-[20px] padding-x">
 						<div className="w-[50%] sm:w-full xm:w-full">
-							<h3 className="paragraph font-medium text-black font-NeueMontreal">
+							<h3 className="paragraph font-medium text-white font-NeueMontreal">
 								Our contact
 							</h3>
 						</div>
 						<div className="w-[50%] text-white sm:w-full xm:w-full flex sm:flex-col xm:flex-col justify-between gap-y-[20px]">
 							<div>
-								<h1 className="paragraph font-medium font-NeueMontreal text-secondry pb-[20px]">
+								<h1 className="paragraph font-medium font-NeueMontreal text-white pb-[20px]">
 									Studio:
 								</h1>
 								<div className="flex flex-col gap-y-[10px]">
@@ -78,7 +76,7 @@ export default function Socials() {
 							</div>
 							<div className="flex w-fit h-fit gap-x-[5px] group">
 								<div className="rounded-[50px] border-[2px] border-[#21212155] group-hover:bg-white py-[3px] px-[12px] cursor-pointer">
-								<h1 className="paragraph  font-NeueMontreal text-black font-bold">
+								<h1 className="paragraph  font-NeueMontreal text-white font-bold">
 							Contact Number : 
   <a 
     href="https://wa.me/919789985132?text=Dear%20Nuke%20Marketing%20Team%2C%20I%20hope%20you%20are%20doing%20well.%20I%20am%20interested%20in%20learning%20more%20about%20your%20services%20and%20ongoing%20projects.%20Could%20you%20please%20provide%20more%20details%20or%20let%20me%20know%20a%20suitable%20time%20to%20discuss%20further%3F%20Looking%20forward%20to%20your%20response.%20Best%20regards%2C%20Client" 
@@ -106,7 +104,7 @@ export default function Socials() {
 			<motion.div
 				className="w-full absolute top-[50%] transform translate-y-[-50%] gap-[30px] flex items-center justify-center"
 				style={{ y: mq }}>
-				<Eyes className="w-[230px] h-[230px] md:w-[200px] md:h-[200px] sm:w-[150px] sm:h-[150px] xm:w-[150px] xm:h-[150px] sm:flex-col xm:flex-col" />
+				
 			</motion.div>
 		</section>
 	);

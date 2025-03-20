@@ -166,12 +166,15 @@ export const Lid = ({
       >
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
         {src && (
-          <Image
-            src={src}
-            alt="screen content"
-            fill
-            className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
-          />
+        <Image
+        src={src}
+        alt="screen content"
+        fill
+        className="absolute inset-0 h-[22rem] w-[40rem] rounded-lg object-cover object-left-top -translate-y-1"
+      />
+      
+       
+       
         )}
       </motion.div>
     </div>

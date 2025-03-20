@@ -1,7 +1,7 @@
 import { projectItem } from "@/constants";
 import { Heading, ProjectCard, RoundButton, Tags } from "@/components";
 import { FeaturesSectionDemo } from "@/components/ui/bentogrid";
-import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
+
 
 export default function Projects() {
 	return (
@@ -60,10 +60,8 @@ export default function Projects() {
 				<FeaturesSectionDemo />
 			</div>
 
-			{/* ✅ Separate GoogleGeminiEffect Div */}
-			<div className="w-full mt-16">
-				<GoogleGeminiEffect />
-			</div>
+		
+			
 		</section>
 	);
 }
