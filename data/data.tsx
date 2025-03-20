@@ -110,7 +110,7 @@ const Badge = ({ className }: { className?: string }) => {
 export function TimelineDemo() {
   const data = [
     {
-      title: "2024",
+      title: "Cliental Requirments",
       content: (
         <div>
           <p className="text-white dark:text-yellow-300 text-xs md:text-sm font-normal mb-8">
@@ -142,7 +142,7 @@ export function TimelineDemo() {
       ),
     },
     {
-      title: "Early 2023",
+      title: "Impactful Solution Discussion",
       content: (
         <div>
           <p className="text-white dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -179,7 +179,7 @@ export function TimelineDemo() {
       ),
     },
     {
-      title: "Growth",
+      title: "Team Division",
       content: (
         <div>
           <p className="text-white dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">

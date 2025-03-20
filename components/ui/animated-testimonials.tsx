@@ -1,7 +1,7 @@
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -11,6 +11,7 @@ type Testimonial = {
   designation: string;
   src: string;
 };
+
 export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
@@ -28,10 +29,6 @@ export const AnimatedTestimonials = ({
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const isActive = (index: number) => {
-    return index === active;
-  };
-
   useEffect(() => {
     if (autoplay) {
       const interval = setInterval(handleNext, 5000);
@@ -39,126 +36,84 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
   return (
-    <div className="mx-auto max-w-sm px-4 py-10 font-sans antialiased bg-white rounded-xl shadow-lg md:max-w-4xl md:px-8 lg:px-12">
-      <h2 className="text-4xl font-bold text-blue-800 mb-8">Client reviews</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="w-full">
-          <div className="relative h-80 w-full mx-auto">
-            <AnimatePresence>
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.src}
-                  initial={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: -100,
-                    rotate: randomRotateY(),
-                  }}
-                  animate={{
-                    opacity: isActive(index) ? 1 : 0.7,
-                    scale: isActive(index) ? 1 : 0.95,
-                    z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
-                    zIndex: isActive(index)
-                      ? 40
-                      : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
-                  }}
-                  exit={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: 100,
-                    rotate: randomRotateY(),
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute inset-0 origin-bottom"
-                >
-                  <Image
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    width={500}
-                    height={500}
-                    draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center shadow-md"
-                  />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
+    <div className="mx-auto max-w-3xl px-6 py-12 font-sans bg-black text-white rounded-[19px] shadow-xl flex flex-col md:flex-row items-center gap-12 overflow-hidden">
+      {/* Image Section */}
+      <div className="w-full md:w-1/2 flex justify-center">
+        <div className="relative h-72 w-72">
+          <AnimatePresence>
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.src}
+                initial={{ opacity: 0, scale: 0.8, rotateY: 90 }}
+                animate={{ opacity: index === active ? 1 : 0, scale: 1, rotateY: 0 }}
+                exit={{ opacity: 0, scale: 0.8, rotateY: -90 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={testimonial.src}
+                  alt={testimonial.name}
+                  width={500}
+                  height={500}
+                  draggable={false}
+                  className="h-full w-full rounded-full object-cover border border-gray-700 shadow-lg"
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
-        <div className="w-full mt-8 md:mt-0">
-          <motion.div
-            key={active}
-            initial={{
-              y: 20,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-            }}
-            exit={{
-              y: -20,
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: "easeInOut",
-            }}
+      </div>
+
+      {/* Text Section */}
+      <div className="w-full md:w-1/2 text-center md:text-left">
+        <motion.div
+          key={active}
+          initial={{ y: 40, opacity: 0, scale: 0.9 }}
+          animate={{ y: 0, opacity: 1, scale: 1 }}
+          exit={{ y: -40, opacity: 0, scale: 0.9 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="p-6 border border-gray-700 rounded-lg backdrop-blur-md"
+        >
+          <h3 className="text-xl font-semibold text-white">
+            {testimonials[active].name}
+          </h3>
+          <p className="text-sm text-gray-400 uppercase tracking-wide">
+            {testimonials[active].designation}
+          </p>
+          <motion.p className="mt-6 text-lg text-white leading-relaxed">
+            {testimonials[active].quote.split(" ").map((word, index) => (
+              <motion.span
+                key={index}
+                initial={{ filter: "blur(5px)", opacity: 0, x: -10 }}
+                animate={{ filter: "blur(0px)", opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut", delay: 0.02 * index }}
+                className="inline-block"
+              >
+                {word}&nbsp;
+              </motion.span>
+            ))}
+          </motion.p>
+        </motion.div>
+
+        {/* Navigation Buttons */}
+        <div className="flex gap-6 mt-8 justify-center md:justify-start">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handlePrev}
+            className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 hover:bg-gray-800 transition-colors"
           >
-            <h3 className="text-2xl font-bold text-blue-800">
-              {testimonials[active].name}
-            </h3>
-            <p className="text-sm text-blue-600">
-              {testimonials[active].designation}
-            </p>
-            <motion.p className="mt-8 text-lg text-blue-700">
-              {testimonials[active].quote.split(" ").map((word, index) => (
-                <motion.span
-                  key={index}
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.2,
-                    ease: "easeInOut",
-                    delay: 0.02 * index,
-                  }}
-                  className="inline-block"
-                >
-                  {word}&nbsp;
-                </motion.span>
-              ))}
-            </motion.p>
-          </motion.div>
-          <div className="flex gap-4 mt-8">
-            <button
-              onClick={handlePrev}
-              className="group/button flex h-8 w-8 items-center justify-center rounded-full bg-blue-200 hover:bg-blue-300 transition-colors duration-200"
-            >
-              <IconArrowLeft className="h-5 w-5 text-blue-800 transition-transform duration-300 group-hover/button:rotate-12" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="group/button flex h-8 w-8 items-center justify-center rounded-full bg-blue-200 hover:bg-blue-300 transition-colors duration-200"
-            >
-              <IconArrowRight className="h-5 w-5 text-blue-800 transition-transform duration-300 group-hover/button:-rotate-12" />
-            </button>
-          </div>
+            <IconArrowLeft className="h-6 w-6 text-white" />
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleNext}
+            className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 hover:bg-gray-800 transition-colors"
+          >
+            <IconArrowRight className="h-6 w-6 text-white" />
+          </motion.button>
         </div>
       </div>
     </div>
