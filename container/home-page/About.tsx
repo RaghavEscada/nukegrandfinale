@@ -4,24 +4,29 @@ import { useState } from "react";
 import { LinkHover } from "@/animation";
 import { footerItems } from "@/constants";
 import { Heading, RoundButton } from "@/components";
+import { MacbookScrollDemo } from "@/data/data";
+import { TimelineDemo } from "@/data/data";
 
 export default function About() {
 	const [hovered, setHovered] = useState(false);
 
 	return (
 		<section className="w-full bg-slate-200 padding-y rounded-t-[20px] z-20 relative mt-[-15px]">
+			<MacbookScrollDemo />
 			<div className="pl-[50px] sm:px-[20px] xm:px-[20px]">
-			<h2 className="sub-heading font-medium font-NeueMontreal text-secondry">
-    We craft data-driven digital strategies to amplify your brand and boost engagement.  
-    <br className="sm:hidden xm:hidden" />  
-    Elevate your Social Media Marketing, Digital Presence & Brand Identity to attract leads, drive sales,
-    <br className="sm:hidden xm:hidden" />  
-    and create powerful content. 
-</h2>
+				<h2 className="sub-heading font-medium font-NeueMontreal text-secondry">
+					We craft data-driven digital strategies to amplify your brand and boost engagement.
+					<br className="sm:hidden xm:hidden" />
+					Elevate your Social Media Marketing, Digital Presence & Brand Identity to attract leads, drive sales,
+					<br className="sm:hidden xm:hidden" />
+					and create powerful content.
+				</h2>
+
 
 
 			</div>
 			<div className="w-full border-y border-[#21212155] my-[50px] py-[20px]">
+
 				<div className="padding-x pb-[50px] w-full flex sm:flex-col xm:flex-col gap-[30px] justify-between">
 					<div className="w-[50%] sm:w-full xm:w-full">
 						<h3 className="sub-paragraph font-medium text-secondry font-NeueMontreal">
@@ -57,17 +62,28 @@ export default function About() {
 									))}
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col gap-[30px]">
-				<div className="flex flex-col gap-[30px]">
+				<div className="w-full flex flex-col gap-[30px]">
 					<Heading title="Nuke's Approach:" />
+
+					{/* Separate TimelineDemo div */}
+					<div className="w-full bg-slate-800 overflow-hidden">
+    <div className="max-w-full">
+        <TimelineDemo />
+    </div>
+</div>
+
+
 					<div
-						className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group"
+						className="w-fit flex items-left justify-between bg-secondry cursor-pointer rounded-full group"
 						onMouseEnter={() => setHovered(true)}
-						onMouseLeave={() => setHovered(false)}>
+						onMouseLeave={() => setHovered(false)}
+					>
 						<RoundButton
 							href="/nuke-team"
 							title="read more"
@@ -77,22 +93,6 @@ export default function About() {
 						/>
 					</div>
 				</div>
-				<div
-					className={`w-[50%] sm:w-full xm:w-full transition transform duration-[1.5s] ease-[.215,.61,.355,1] rounded-[15px] overflow-hidden ${
-						hovered && "scale-[0.96]"
-					}`}>
-					<Image
-						src="/group.jpeg"
-						height = {220}
-						width = {200}
-					
-						alt="about-img"
-						className={`w-full h-full transition transform duration-[2s] ease-[.215,.61,.355,1] ${
-							hovered && "scale-[1.20]"
-						}`}
-					/>
-				</div>
-				
 			</div>
 		</section>
 	);
