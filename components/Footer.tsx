@@ -18,7 +18,7 @@ export default function Footer() {
 				</div>
 				<div className="h-full flex flex-col justify-between sm:w-full xm:w-full w-1/2">
 					<div>
-						<h1 className="text-[150px] leading-[115px] lg:text-[130px] lg:leading-[98px] md:text-[100px] md:leading-[75px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] font-semibold font-FoundersGrotesk text-slate-500 uppercase">
+						<h1 className="text-[150px] leading-[115px] lg:text-[130px] lg:leading-[98px] md:text-[100px] md:leading-[75px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] font-semibold font-FoundersGrotesk text-red-700 uppercase">
 							<TextMask>{phrase1}</TextMask>
 						</h1>
 						<div className="pt-[50px]">
@@ -79,7 +79,7 @@ export default function Footer() {
 						
 						
 						<div className="pt-[50px] flex gap-x-[20px]">
-						<h1 className="paragraph font-medium font-NeueMontreal text-black">
+						<h1 className="paragraph font-medium font-NeueMontreal text-white">
 							Contact Number : 
   <a 
     href="https://wa.me/919789985132?text=Dear%20Nuke%20Marketing%20Team%2C%20I%20hope%20you%20are%20doing%20well.%20I%20am%20interested%20in%20learning%20more%20about%20your%20services%20and%20ongoing%20projects.%20Could%20you%20please%20provide%20more%20details%20or%20let%20me%20know%20a%20suitable%20time%20to%20discuss%20further%3F%20Looking%20forward%20to%20your%20response.%20Best%20regards%2C%20Client" 
@@ -87,12 +87,12 @@ export default function Footer() {
     rel="noopener noreferrer"
     className="text-green-600 font-bold underline"
   >
-     +91 97899 85132
+       +91 97899 85132
   </a>
 </h1>
 
 							<h1 className="paragraph font-medium font-NeueMontreal text-white">
-								Email ID :
+								Email ID:
 							</h1>
 							<LinkHover
 								title="nukemarketing7@gmail.com"
