@@ -58,9 +58,11 @@ export function MacbookScrollDemo() {
     <div className="overflow-hidden dark:bg-[#0B0B0F] bg-slate-700 w-full h-screen">
       <MacbookScroll
         title={
-          <span className="text-5xl font-extrabold text-indigo-500 my-8 block tracking-tight">
-            Enhancing Web Branding<br />Like Noneother.
-          </span>
+          <span className="text-6xl font-extrabold text-indigo-500 my-8 block tracking-tight">
+  NUKE MARKETING<br />
+  <span className="text-3xl font-semibold text-indigo-400">Crafting Digital Legacies.</span>
+</span>
+
         }
         src="/macbook.gif"
         showGradient={false}

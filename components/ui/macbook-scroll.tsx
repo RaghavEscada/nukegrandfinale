@@ -79,7 +79,7 @@ export const MacbookScroll = ({
       >
         {title || (
           <span>
-            Enhancing Web Branding <br /> Like Noneother.
+            NUKE MARKETING<br /> <span className="text-3xl">Crafting World Class Social</span>
           </span>
         )}
       </motion.h2>
@@ -170,7 +170,10 @@ export const Lid = ({
         src={src}
         alt="screen content"
         fill
-        className="absolute inset-0 h-[22rem] w-[40rem] rounded-lg object-cover object-left-top -translate-y-1"
+        className="absolute inset-0 h-[22rem] w-[36rem] rounded-lg object-cover object-center -translate-y-1"
+
+
+
       />
       
        
@@ -622,7 +625,7 @@ export const OptionKey = ({ className }: { className: string }) => {
       fill="none"
       version="1.1"
       id="icon"
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="/nuke.png"
       viewBox="0 0 32 32"
       className={className}
     >
@@ -656,9 +659,9 @@ const AceternityLogo = () => {
       width="66"
       height="65"
       viewBox="0 0 66 65"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-3 w-3 text-white"
+      
+      xmlns="/nuke.png"
+      className="h-3 w-3 text-black"
     >
       <path
         d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"

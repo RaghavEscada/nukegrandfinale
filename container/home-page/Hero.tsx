@@ -185,7 +185,7 @@ export default function Hero() {
         >
           <Link href="/contact">
             <div className="relative z-10 py-4 px-10 border-2 border-secondry rounded-full overflow-hidden">
-              <span className="relative z-10 text-secondry group-hover:text-background font-medium transition-colors duration-500">
+              <span className="relative z-10 text-secondry group-hover:text-red-500 font-medium transition-colors duration-400">
                 Talk to Us
               </span>
              
