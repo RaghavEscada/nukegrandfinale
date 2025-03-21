@@ -5,9 +5,10 @@ import { LinkHover, TextMask } from "@/animation";
 import { footerItems, footernavbarItems } from "@/constants";
 import { TextHoverEffectDemo } from "@/data/data";
 
+
 export default function Footer() {
-	const phrase = ["*","Social Content","EXPERTS."];
-	const phrase1 = ["#bombin'",""];
+	const phrase = ["*", "Social Content", "EXPERTS."];
+	const phrase1 = ["#bombin'", ""];
 	return (
 		<footer className="w-full min-h-screen padding-x z-30 relative pt-[40px] bg-black flex flex-col justify-between rounded-t-[20px] mt-[-20px]">
 			<div className="w-full flex justify-between sm:flex-col xm:flex-col">
@@ -76,20 +77,20 @@ export default function Footer() {
 								))}
 							</div>
 						</div>
-						
-						
+
+
 						<div className="pt-[50px] flex gap-x-[20px]">
-						<h1 className="paragraph font-medium font-NeueMontreal text-white">
-							Contact Number : 
-  <a 
-    href="https://wa.me/919789985132?text=Dear%20Nuke%20Marketing%20Team%2C%20I%20hope%20you%20are%20doing%20well.%20I%20am%20interested%20in%20learning%20more%20about%20your%20services%20and%20ongoing%20projects.%20Could%20you%20please%20provide%20more%20details%20or%20let%20me%20know%20a%20suitable%20time%20to%20discuss%20further%3F%20Looking%20forward%20to%20your%20response.%20Best%20regards%2C%20Client" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="text-green-600 font-bold underline"
-  >
-       +91 97899 85132
-  </a>
-</h1>
+							<h1 className="paragraph font-medium font-NeueMontreal text-white">
+								Contact Number :
+								<a
+									href="https://wa.me/919789985132?text=Dear%20Nuke%20Marketing%20Team%2C%20I%20hope%20you%20are%20doing%20well.%20I%20am%20interested%20in%20learning%20more%20about%20your%20services%20and%20ongoing%20projects.%20Could%20you%20please%20provide%20more%20details%20or%20let%20me%20know%20a%20suitable%20time%20to%20discuss%20further%3F%20Looking%20forward%20to%20your%20response.%20Best%20regards%2C%20Client"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-green-600 font-bold underline"
+								>
+									+91 97899 85132
+								</a>
+							</h1>
 
 							<h1 className="paragraph font-medium font-NeueMontreal text-white">
 								Email ID:
@@ -99,12 +100,12 @@ export default function Footer() {
 								href="nukemarketing7@gmail.com"
 								className="before:h-[1px] after:h-[1px] paragraph font-medium before:bottom-[-3px] after:bottom-[-3px]"
 							/>
-						
-							
+
+
 						</div>
-						
+
 						<div className="pt-[50px] flex gap-x-[20px]">
-							
+
 						</div>
 					</div>
 				</div>
@@ -124,7 +125,7 @@ export default function Footer() {
 				<div className="w-1/2 h-full flex gap-[10px] justify-between items-end sm:w-full xm:w-full sm:flex-col xm:flex-col sm:items-start xm:items-start">
 					<div className="flex sm:flex-col xm:flex-col gap-[10px]">
 						<h1 className="paragraph font-medium font-NeueMontreal text-white opacity-40">
-							© Nuke Marketing 2025. 
+							© Nuke Marketing 2025.
 						</h1>
 						<LinkHover
 							title="Legal Terms"
@@ -133,22 +134,22 @@ export default function Footer() {
 						/>
 					</div>
 					<div>
-					
+
 						<LinkHover
 							title="Website by Raghav"
 							href="https://raghavkrishnaportfolio.vercel.app/"
 							className="before:h-[1px] after:h-[1px] paragraph font-medium text-white opacity-40 before:bottom-[-3px] after:bottom-[-3px]"
 						/>
-						
+
 
 
 					</div>
 				</div>
-				
+
 			</div>
 			<div className="w-full bottom-10 left-0 z-50 bg-black">
-	<TextHoverEffectDemo />
-</div>
+				<TextHoverEffectDemo />
+			</div>
 		</footer>
 	);
 }

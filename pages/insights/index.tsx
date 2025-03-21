@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { Curve } from "@/components";
-import { Heroinsights, Publicationinsights} from "@/container";
+import { Heroinsights, Publicationinsights } from "@/container";
 
 
 
@@ -20,6 +20,7 @@ export default function Insights() {
 			<Curve backgroundColor={"#f1f1f1"}>
 				<Heroinsights />
 				<Publicationinsights />
+
 
 			</Curve>
 		</>
