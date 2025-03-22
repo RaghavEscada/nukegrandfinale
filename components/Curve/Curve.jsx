@@ -12,6 +12,7 @@ const routes = {
 	"/insights": "Stand out or fade out.",
 	"/contact": "Create. Refine. Repeat.",
 	"/case": "Workiz Easy",
+	"/core":"Scroll to check out our core expertise.",
 	"/playground" : "click and drag!"
 };
 

@@ -5,6 +5,11 @@ import { capaybilities1, capaybilities2, capaybilities3, capaybilities4, client0
 export const navbarItems = [
    {
       id: 1,
+      title: "test",
+      href: "/test",
+   },
+   {
+      id: 1,
       title: "Services",
       href: "/services",
    },

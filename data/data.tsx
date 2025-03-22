@@ -8,6 +8,7 @@ import { WavyBackground } from "@/components/ui/wavy-background";
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useScroll, useTransform } from "motion/react";
 
 
@@ -53,24 +54,31 @@ export function AnimatedTestimonialsDemo() {
 
 }
 
+
 export function MacbookScrollDemo() {
   return (
-    <div className="overflow-hidden dark:bg-[#0B0B0F] bg-slate-700 w-full h-screen">
+    <div className="overflow-hidden dark:bg-[#0B0B0F] bg-white w-full">
       <MacbookScroll
         title={
-          <span className="text-6xl font-extrabold text-indigo-500 my-8 block tracking-tight">
-  NUKE MARKETING<br />
-  <span className="text-3xl font-semibold text-indigo-400">Crafting Digital Legacies.</span>
-</span>
-
+          <span className="text-[120px] font-bold block">
+          NUKE MARKETING
+          <span className="text-lg font-normal block">
+              We're unbeatable at what we do.
+          </span>
+      </span>
+      
         }
-        src="/macbook.gif"
+        badge={
+          <Link href="www.peerlist.io/raghavkrishna">
+            <Badge className="h-10 w-10 transform -rotate-12" />
+          </Link>
+        }
+        src={`/linear.webp`}
         showGradient={false}
       />
     </div>
   );
 }
-
 // Peerlist logo
 const Badge = ({ className }: { className?: string }) => {
   return (
@@ -113,6 +121,8 @@ const Badge = ({ className }: { className?: string }) => {
     </svg>
   );
 };
+
+
 
 export function TimelineDemo() {
   const data = [

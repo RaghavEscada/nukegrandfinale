@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { logo } from "@/public";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { navVariants } from "@/motion";
 import { TextHover } from "@/animation";
 import { navbarItems } from "@/constants";
