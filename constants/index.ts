@@ -9,6 +9,11 @@ export const navbarItems = [
       href: "/services",
    },
    {
+      id: 1,
+      title: "Core",
+      href: "/core",
+   },
+   {
       id: 2,
       title: "Crafts",
       href: "/nuke-works",

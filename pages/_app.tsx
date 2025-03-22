@@ -11,6 +11,9 @@ export default function App({
 	pageProps: any;
 	router: any;
 }) {
+	// Define the route where you don't want the footer
+	const hideFooterRoutes = ["/core"]; // Add more routes if needed
+
 	return (
 		<>
 			<Navbar />
@@ -20,7 +23,8 @@ export default function App({
 					{...pageProps}
 				/>
 			</AnimatePresence>
-			<Footer />
+			{/* Render footer only if the current route is not in the hideFooterRoutes array */}
+			{!hideFooterRoutes.includes(router.route) && <Footer />}
 		</>
 	);
 }
